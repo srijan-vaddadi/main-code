@@ -5,17 +5,15 @@ cat = animal_part_2.Animal('Fluffy')
 cat.move(1, 1)
 dog = animal_part_2.Animal('Jimmy')
 
-while dog.locate() != cat.locate():
+while dog.locate()[0] != cat.locate()[0] or dog.locate()[1] != cat.locate()[1]:
     cat.move(randint(-3, 3), randint(-3, 3))
-    print(cat.locate())
-    if dog.locate < cat.locate():
+    if dog.locate()[0] < cat.locate()[0]:
         dog.move(1, 0)
-    elif dog.locate() > cat.locate():
+    elif dog.locate()[0] > cat.locate()[0]:
         dog.move(-1, 0)
-    if dog.locate() < cat.locate():
+    if dog.locate()[1] < cat.locate()[1]:
         dog.move(0, 1)
-    elif dog.locate() > cat.locate():
+    elif dog.locate()[1] > cat.locate()[1]:
         dog.move(0, -1)
-    print(dog.locate())
-if cat._position == dog._position:
+if cat.locate() == dog.locate():
     cat.death()
