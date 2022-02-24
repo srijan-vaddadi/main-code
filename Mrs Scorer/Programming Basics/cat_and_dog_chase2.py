@@ -17,5 +17,5 @@ while dog.locate() != cat.locate():
     elif dog.locate() > cat.locate():
         dog.move(0, -1)
     print(dog.locate())
-if cat.locate() == dog.locate():
+if cat._position == dog._position:
     cat.death()

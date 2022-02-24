@@ -2,8 +2,8 @@
 # All variables now private,
 # accessed through methods.
 
-class Animal():
-    '''An animal class'''
+class Animal:
+    """An animal class"""
 
     def __init__(self, name):
         self._legs = 4
@@ -13,7 +13,7 @@ class Animal():
         self.alive = True
 
     def set_legs(self, n=4):
-        '''set number of legs to n'''
+        """set number of legs to n"""
         self._legs = n
 
     def get_legs(self):
@@ -32,7 +32,7 @@ class Animal():
         return self._name
 
     def toggle_sleep(self):
-        '''Toggles animal between awake and asleep'''
+        """Toggles animal between awake and asleep"""
         self._awake = not self._awake
         if self._awake:
             state = 'is awake.'
@@ -49,15 +49,15 @@ class Animal():
         print(self._name, state)
 
     def move(self, a, b):
-        '''Moves animal from current position by
-        a in x-direction, b in y-direction'''
+        """Moves animal from current position by
+        a in x-direction, b in y-direction"""
         try:
             self._position[0] += a
             self._position[1] += b
             return True
         except:
             print('Invalid a,b:', (a, b))
-            print('postion left unchanged')
+            print('Position left unchanged')
             return False
 
     def locate(self):
@@ -66,9 +66,9 @@ class Animal():
                                                       self._position[1]))
         return self._position
 
+
 dragon = Animal('Smaug')
 dragon.set_legs(2)
 print(dragon.get_legs())
 cat = Animal('Fluffy')
 dog = Animal('Jimmy')
-
