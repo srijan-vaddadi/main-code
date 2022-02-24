@@ -50,7 +50,7 @@ class Animal():
 
     def move(self, a, b):
         '''Moves animal from current position by
-a in x-direction, b in y-direction'''
+        a in x-direction, b in y-direction'''
         try:
             self._position[0] += a
             self._position[1] += b
