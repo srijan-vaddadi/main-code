@@ -2,7 +2,7 @@ import animal_part_2
 from random import randint
 
 dragon = animal_part_2.Animal('Smaug')
-dragon.move(1, 1)
+dragon.move(-1, -1)
 cat = animal_part_2.Animal('Fluffy')
 cat.move(1, 1)
 dog = animal_part_2.Animal('Jimmy')
@@ -32,15 +32,16 @@ while dog.locate()[0] != cat.locate()[0] or dog.locate()[1] != cat.locate()[1]:
     if dragon.locate()[0] > dog.locate()[0] or dragon.locate()[1] > dog.locate()[1]:
         dragon.move(randint(-1, 0), randint(-1, 0))
 
-    if dragon.locate() == obj1.locate() or obj2.locate() or obj3.locate() or obj4.locate() or obj5.locate():
-        print('Smaug hit an object')
-        dragon.death()
     if dog.locate() == obj1.locate() or obj2.locate() or obj3.locate() or obj4.locate() or obj5.locate():
         print('Fluffy hit an object')
+        print('Jimmy wins')
         dog.death()
+        break
     if cat.locate() == obj1.locate() or obj2.locate() or obj3.locate() or obj4.locate() or obj5.locate():
         print('Jimmy hit an object')
-        dragon.death()
+        print('Fluffy wins')
+        cat.death()
+        break
 
     if dog.locate() == dragon.locate():
         dog.death()
