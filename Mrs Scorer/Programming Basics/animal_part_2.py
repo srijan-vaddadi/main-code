@@ -60,4 +60,6 @@ a in x-direction, b in y-direction'''
 dragon = Animal('Smaug')
 dragon.set_legs(2)
 print(dragon.get_legs())
+cat = Animal('Fluffy')
+dog = Animal('Jimmy')
 
