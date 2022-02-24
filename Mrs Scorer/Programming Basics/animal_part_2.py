@@ -42,10 +42,7 @@ class Animal:
 
     def death(self):
         self.alive = not self.alive
-        if self.alive:
-            state = 'is alive'
-        else:
-            state = 'is dead'
+        state = 'is dead'
         print(self._name, state)
 
     def move(self, a, b):
@@ -59,6 +56,10 @@ class Animal:
             print('Invalid a,b:', (a, b))
             print('Position left unchanged')
             return False
+
+    def teleport(self, a, b):
+        self._position[0] = a
+        self._position[1] = b
 
     def locate(self):
         print('The animal {0} is at {1}, {2}.'.format(self._name,
