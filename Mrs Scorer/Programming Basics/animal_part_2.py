@@ -10,6 +10,7 @@ class Animal():
         self._awake = True
         self._position = [0, 0]
         self._name = name
+        self.alive = True
 
     def set_legs(self, n=4):
         '''set number of legs to n'''
@@ -39,6 +40,14 @@ class Animal():
             state = 'is asleep'
         print(self._name, state)
 
+    def death(self):
+        self.alive = not self.alive
+        if self.alive:
+            state = 'is alive'
+        else:
+            state = 'is dead'
+        print(self._name, state)
+
     def move(self, a, b):
         '''Moves animal from current position by
 a in x-direction, b in y-direction'''
@@ -52,9 +61,9 @@ a in x-direction, b in y-direction'''
             return False
 
     def locate(self):
-        # print('The animal {0} is at {1}, {2}.'.format(self._name,
-        #                                              self._position[0],
-        #                                              self._position[1]))
+        print('The animal {0} is at {1}, {2}.'.format(self._name,
+                                                      self._position[0],
+                                                      self._position[1]))
         return self._position
 
 dragon = Animal('Smaug')
