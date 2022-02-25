@@ -6,49 +6,53 @@ dragon.move(-1, -1)
 cat = animal_part_2.Animal('Fluffy')
 cat.move(1, 1)
 dog = animal_part_2.Animal('Jimmy')
-obj1 = animal_part_2.Animal('Obj1')
-obj2 = animal_part_2.Animal('Obj2')
-obj3 = animal_part_2.Animal('Obj3')
-obj4 = animal_part_2.Animal('Obj4')
-obj5 = animal_part_2.Animal('Obj5')
 
+obj1 = animal_part_2.Object('Obj1')
+obj2 = animal_part_2.Object('Obj2')
+obj3 = animal_part_2.Object('Obj3')
+obj4 = animal_part_2.Object('Obj4')
+obj5 = animal_part_2.Object('Obj5')
+
+obj1.teleport(randint(-10, 10), randint(-10, 10))
+obj2.teleport(randint(-10, 10), randint(-10, 10))
+obj3.teleport(randint(-10, 10), randint(-10, 10))
+obj4.teleport(randint(-10, 10), randint(-10, 10))
+obj5.teleport(randint(-10, 10), randint(-10, 10))
 
 while dog.locate()[0] != cat.locate()[0] or dog.locate()[1] != cat.locate()[1]:
+
     cat.move(randint(-3, 3), randint(-3, 3))
-    dragon.locate()
-    obj1.teleport(randint(-50, 50), randint(-50, 50))
-    obj2.teleport(randint(-50, 50), randint(-50, 50))
-    obj3.teleport(randint(-50, 50), randint(-50, 50))
-    obj4.teleport(randint(-50, 50), randint(-50, 50))
-    obj5.teleport(randint(-50, 50), randint(-50, 50))
 
     if dog.locate()[0] < cat.locate()[0] or dog.locate()[1] < cat.locate()[1]:
         dog.move(randint(0, 1), randint(0, 1))
     if dog.locate()[0] > cat.locate()[0] or dog.locate()[1] > cat.locate()[1]:
         dog.move(randint(-1, 0), randint(-1, 0))
+    dog.location()
 
     if dragon.locate()[0] < dog.locate()[0] or dragon.locate()[1] < dog.locate()[1]:
         dragon.move(randint(0, 1), randint(0, 1))
     if dragon.locate()[0] > dog.locate()[0] or dragon.locate()[1] > dog.locate()[1]:
         dragon.move(randint(-1, 0), randint(-1, 0))
+    dragon.location()
 
-    if dog.locate() == obj1.locate() or obj2.locate() or obj3.locate() or obj4.locate() or obj5.locate():
-        print('Fluffy hit an object')
-        print('Jimmy wins')
-        dog.death()
-        break
-    if cat.locate() == obj1.locate() or obj2.locate() or obj3.locate() or obj4.locate() or obj5.locate():
+    if dog.locate() == obj1.location() or dog.locate() == obj2.location() or dog.locate() == obj3.location()\
+            or dog.locate() == obj4.location() or dog.locate() == obj5.location():
         print('Jimmy hit an object')
-        print('Fluffy wins')
-        cat.death()
-        break
-
-    if dog.locate() == dragon.locate():
         dog.death()
         print('Fluffy wins')
         break
+    if cat.locate() == obj1.location() or cat.locate() == obj2.location() or cat.locate() == obj3.location()\
+            or cat.locate() == obj4.location() or cat.location() == obj5.location():
+        print('Fluffy hit an object')
+        cat.death()
+        print('Jimmy wins')
+        break
 
-    if cat.locate() == dog.locate():
+    if dog.location() == dragon.location():
+        dog.death()
+        print('Fluffy wins')
+        break
+    if cat.location() == dog.location():
         cat.death()
         print('Jimmy wins')
         break

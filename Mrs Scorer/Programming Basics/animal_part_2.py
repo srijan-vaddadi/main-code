@@ -57,17 +57,27 @@ class Animal:
             print('Position left unchanged')
             return False
 
-    def teleport(self, a, b):
-        self._position[0] = a
-        self._position[1] = b
-
     def locate(self):
+        return self._position
+
+    def location(self):
         print('The animal {0} is at {1}, {2}.'.format(self._name,
                                                       self._position[0],
                                                       self._position[1]))
         return self._position
 
 
-dragon = Animal('Smaug')
-cat = Animal('Fluffy')
-dog = Animal('Jimmy')
+class Object:
+    def __init__(self, name):
+        self._name = name
+        self._position = [0, 0]
+
+    def set_name(self, name=''):
+        self._name = name
+
+    def teleport(self, a, b):
+        self._position[0] = a
+        self._position[1] = b
+
+    def location(self):
+        return self._position
