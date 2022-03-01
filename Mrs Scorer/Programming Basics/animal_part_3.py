@@ -1,8 +1,8 @@
 # Animal class - part 3
 # Use of magic methods
 
-class Animal():
-    '''An animal class'''
+class Animal:
+    """An animal class"""
 
     def __init__(self, name):
         self._legs = 4
@@ -11,7 +11,7 @@ class Animal():
         self._name = name
 
     def __repr__(self):
-        return ('<Animal ' + self._name + '>')
+        return '<Animal ' + self._name + '>'
 
     def __str__(self):
         if self._awake:
@@ -30,7 +30,7 @@ class Animal():
         return len(self._name)
 
     def set_legs(self, n=4):
-        '''set number of legs to n'''
+        """set number of legs to n"""
         self._legs = n
 
     def get_legs(self):
@@ -49,7 +49,7 @@ class Animal():
         return self._name
 
     def toggle_sleep(self):
-        '''Toggles animal between awake and asleep'''
+        """Toggles animal between awake and asleep"""
         self._awake = not self._awake
         if self._awake:
             state = 'is awake.'
@@ -58,18 +58,20 @@ class Animal():
         print(self._name, state)
 
     def move(self, a, b):
-        '''Moves animal from current position by
-a in x-direction, b in y-direction'''
+        """Moves animal from current position by
+        a in x-direction, b in y-direction"""
         try:
             self._position[0] += a
             self._position[1] += b
             return True
         except:
             print('Invalid a,b:', (a, b))
-            print('postion left unchanged')
+            print('position left unchanged')
             return False
 
     def locate(self):
         return self._position
 
 
+dragon = Animal('Smaug')
+print(dir(dragon))
