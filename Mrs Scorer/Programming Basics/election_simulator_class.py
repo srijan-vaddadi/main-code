@@ -32,13 +32,3 @@ class Candidate:
     def get_likeS(self):
         return self._likeS
 
-
-'''class Voters:
-    def __init__(self):
-        self._lScore = 5
-
-    def set_lScore(self):
-        self._lScore = random.randint(0, 10)
-
-    def get_lScore(self):
-        return self._lScore'''
