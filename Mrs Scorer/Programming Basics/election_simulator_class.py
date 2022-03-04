@@ -33,7 +33,7 @@ class Candidate:
         return self._likeS
 
 
-class Voters:
+'''class Voters:
     def __init__(self):
         self._lScore = 5
 
@@ -41,4 +41,4 @@ class Voters:
         self._lScore = random.randint(0, 10)
 
     def get_lScore(self):
-        return self._lScore
+        return self._lScore'''
