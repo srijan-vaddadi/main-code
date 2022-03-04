@@ -15,13 +15,13 @@ class Candidate:
         return self._name
 
     def set_RLS(self):
-        self._RLS = random.randint(1, 2)
+        self._RLS = random.randint(0, 2)
 
     def get_RLS(self):
         return self._RLS
 
     def set_LLS(self):
-        self._LLS = random.randint(9, 10)
+        self._LLS = random.randint(8, 10)
 
     def get_LLS(self):
         return self._LLS

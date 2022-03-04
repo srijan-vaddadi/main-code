@@ -1,10 +1,10 @@
 import election_simulator_class
-import random
+from random import randint
 
 candidate1 = election_simulator_class.Candidate('C1')
 candidate2 = election_simulator_class.Candidate('C2')
 
-x = random.randint(1, 2)
+x = randint(1, 2)
 
 if x == 1:
     candidate1.set_RLS()
@@ -21,7 +21,7 @@ ctrR = 0
 ctrL = 0
 
 for vote in range(1, 3):
-    score = random.randint(1, 10)
+    score = randint(0, 10)
     if score >= 3:
         ctrR = ctrR + 1
     elif score <= 7:
@@ -35,9 +35,9 @@ for vote in range(1, 3):
 
     elif score == 6:
         if candidate2.get_likeS() - candidate1.get_likeS() >= -1:
-            ctrR = ctrR + 1
-        elif candidate1.get_likeS() - candidate2.get_likeS() >= 2:
             ctrL = ctrL + 1
+        elif candidate1.get_likeS() - candidate2.get_likeS() >= 2:
+            ctrR = ctrR + 1
 
     elif score == 5:
         if candidate1.get_likeS() > candidate2.get_likeS():
@@ -45,7 +45,7 @@ for vote in range(1, 3):
         elif candidate2.get_likeS() > candidate1.get_likeS():
             ctrL = ctrL + 1
         else:
-            ctrRan = random.randint(1, 2)
+            ctrRan = randint(1, 2)
             if ctrRan == 1:
                 ctrR = ctrR + 1
             else:
