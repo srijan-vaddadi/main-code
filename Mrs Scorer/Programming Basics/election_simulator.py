@@ -20,20 +20,33 @@ else:
 ctrR = 0
 ctrL = 0
 
-for voters in range(1, 3):
+for vote in range(1, 3):
     score = random.randint(1, 10)
     if score >= 3:
         ctrR = ctrR + 1
     elif score <= 7:
         ctrL = ctrL + 1
+
     elif score == 4:
-        if candidate1.get_likeS() - candidate2.get_likeS() > 0:
+        if candidate1.get_likeS() - candidate2.get_likeS() >= -1:
             ctrR = ctrR + 1
-        elif candidate2.get_likeS() - candidate1.get_likeS() > 0:
+        elif candidate2.get_likeS() - candidate1.get_likeS() >= 2:
+            ctrL = ctrL + 1
+
+    elif score == 6:
+        if candidate2.get_likeS() - candidate1.get_likeS() >= -1:
+            ctrR = ctrR + 1
+        elif candidate1.get_likeS() - candidate2.get_likeS() >= 2:
+            ctrL = ctrL + 1
+
+    elif score == 5:
+        if candidate1.get_likeS() > candidate2.get_likeS():
+            ctrR = ctrR + 1
+        elif candidate2.get_likeS() > candidate1.get_likeS():
             ctrL = ctrL + 1
         else:
-            ctrChooser = random.randint(1, 2)
-            if ctrChooser == 1:
+            ctrRan = random.randint(1, 2)
+            if ctrRan == 1:
                 ctrR = ctrR + 1
             else:
                 ctrL = ctrL + 1
