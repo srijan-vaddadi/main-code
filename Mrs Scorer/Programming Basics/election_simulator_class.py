@@ -4,8 +4,8 @@ import random
 class Candidate:
     def __init__(self, name):
         self._name = name
-        self._leaningSR = 5
-        self._leaningSL = 5
+        self._RLS = 5
+        self._LLS = 5
         self._likeS = 5
 
     def set_name(self, name=''):
@@ -14,12 +14,23 @@ class Candidate:
     def get_name(self):
         return self._name
 
-    def set_leaningSR(self):
-        self._leaningSR = random.randint(0, 2)
-        self._leaningSL = 0
+    def set_RLS(self):
+        self._RLS = random.randint(1, 2)
+
+    def get_RLS(self):
+        return self._RLS
+
+    def set_LLS(self):
+        self._LLS = random.randint(9, 10)
+
+    def get_LLS(self):
+        return self._LLS
 
     def set_likeS(self):
         self._likeS = random.randint(0, 10)
+
+    def get_likeS(self):
+        return self._likeS
 
 
 class Voters:
@@ -31,7 +42,3 @@ class Voters:
 
     def get_lScore(self):
         return self._lScore
-
-    def vote(self):
-        if self._lScore > 4:
-            breakpoint()
