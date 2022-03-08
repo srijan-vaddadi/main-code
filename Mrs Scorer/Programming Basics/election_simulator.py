@@ -20,7 +20,7 @@ else:
 ctrR = 0
 ctrL = 0
 
-for vote in range(1, 3):
+for vote in range(1, 100):
     score = randint(0, 10)
     if score >= 3:
         ctrR = ctrR + 1
