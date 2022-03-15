@@ -1,6 +1,7 @@
 import election_simulator_class
 from random import randint
 
+
 candidate1 = election_simulator_class.Candidate('C1')
 candidate2 = election_simulator_class.Candidate('C2')
 
