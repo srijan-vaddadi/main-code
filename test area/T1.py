@@ -1,6 +1,11 @@
-brand = input('Enter brand name: ')
-model = input('Enter model name: ')
-number_of_seats = input('Enter number of seats: ')
-engine_size = input('Enter engine size: ')
-
-print('The',  brand, 'model', model, 'has', number_of_seats, 'seats and has a', engine_size, 'litre engine.')
+Names1 = 'Ben'
+Names2 = 'Thor'
+Names3 = 'Zoe'
+Names4 = 'Kate'
+Max = 4
+Current = 1
+Found = False
+PlayerName = input('What player are you looking for: ')
+# while Found == False and Current <= Max:
+#    if Names1 == PlayerName or Names2 == PlayerName or Names3 == PlayerName or Names4 == PlayerName
+        
